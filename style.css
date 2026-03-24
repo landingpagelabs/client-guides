@@ -227,6 +227,17 @@ a:hover { opacity: 0.8; }
   letter-spacing: -0.02em;
 }
 
+.section-heading__description {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  background: #F8F8F8;
+  border-radius: 6px;
+  padding: 14px 18px;
+  border-left: 3px solid #ddd;
+}
+
 /* ---------- Step Card ---------- */
 .step {
   background: #fff;

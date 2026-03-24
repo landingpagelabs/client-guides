@@ -89,6 +89,15 @@
         h2.className = 'section-heading__title';
         h2.textContent = section.heading;
         headingDiv.appendChild(h2);
+
+        // Section description (context block)
+        if (section.description) {
+          var descDiv = document.createElement('div');
+          descDiv.className = 'section-heading__description';
+          descDiv.innerHTML = section.description;
+          headingDiv.appendChild(descDiv);
+        }
+
         container.appendChild(headingDiv);
       }
 
