@@ -1,20 +1,20 @@
 {
-  "title": "Setting Up a Free Webflow Account",
+  "title": "Webflow Setup Guide",
   "slug": "webflow-account",
   "intro": {
-    "text": "We build your landing page in Webflow, a professional website builder. You'll need a free Webflow account so we can share the project with you and publish it to your subdomain. No credit card required.",
+    "text": "We build your landing page in Webflow, a professional website builder. This guide walks you through the full setup: creating your account, inviting us to your workspace, adding a site plan, and connecting your custom domain.",
     "bullets": [
       "We build your landing page inside your Webflow account so you own it",
       "The free Starter plan is all you need to get started",
-      "We handle the setup and build once you have the account created"
+      "We handle the build, tracking, and deployment once access is set up"
     ],
-    "helpText": "If you have any troubles, feel free to email Tyce, or <a href=\"https://www.landingpagelabs.co/meet-with-tyce\">book a meeting</a> directly"
+    "helpText": "If you have any troubles at any step, feel free to email Tyce, or <a href=\"https://www.landingpagelabs.co/meet-with-tyce\">book a meeting</a> directly"
   },
   "prerequisites": [],
-  "estimatedTime": "~2 minutes",
+  "estimatedTime": null,
   "sections": [
     {
-      "heading": null,
+      "heading": "Create Your Free Account",
       "steps": [
         {
           "label": "Step 1",
@@ -37,16 +37,155 @@
         {
           "label": "Step 3",
           "title": "Stay on the free Starter plan",
-          "description": "You do not need to upgrade or enter any payment details. The free Starter plan is all we need. If prompted to choose a plan, select \"Starter\" (Free).",
+          "description": "You do not need to upgrade or enter any payment details. The free Starter plan is all we need to get started. If prompted to choose a plan, select \"Starter\" (Free).",
           "bullets": [],
           "records": [],
           "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-account/step-3.png",
           "isFinal": false
         },
         {
-          "label": "Step 4 (Final Step)",
+          "label": "Step 4",
           "title": "Let us know your account is ready",
-          "description": "Once your account is created, let us know and we'll invite you to the project workspace. We'll handle everything from there.",
+          "description": "Once your account is created, let us know and we'll move to the next step.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": true
+        }
+      ]
+    },
+    {
+      "heading": "Invite Us to Your Workspace",
+      "steps": [
+        {
+          "label": "Step 1",
+          "title": "Go to your workspace settings",
+          "description": "Click \"All Sites\" to make sure you're in your workspace view (not inside a specific site).",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 2",
+          "title": "Find \"Team\" in the sidebar",
+          "description": "Under Settings in the left sidebar, click \"Team\".",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 3",
+          "title": "Invite us as guests",
+          "description": "Under \"Agency or Freelancer Guests\", click \"Invite Guest\" and add both email addresses below. Set permissions to <strong>Site Manager</strong> for both.",
+          "bullets": [
+            "dev@landingpagelabs.co",
+            "tyce@landingpagelabs.co"
+          ],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 4",
+          "title": "Let us know once we're invited",
+          "description": "We'll then transfer the site into your workspace.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": true
+        }
+      ]
+    },
+    {
+      "heading": "Add a Site Plan",
+      "steps": [
+        {
+          "label": "Step 1",
+          "title": "We'll send you a direct link to the billing page",
+          "description": "Once we've transferred the site to your workspace, we'll send you a link to add a site plan. You don't need to find this yourself.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 2",
+          "title": "Add the \"Basic\" site plan ($18 USD/month)",
+          "description": "Click the link we send and select the Basic plan. This is the minimum plan needed to publish on a custom domain.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 3",
+          "title": "Let us know once the plan is active",
+          "description": "We'll then move to the final step: connecting your custom domain.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": true
+        }
+      ]
+    },
+    {
+      "heading": "Connect Your Custom Domain",
+      "steps": [
+        {
+          "label": "Step 1",
+          "title": "Navigate to the publishing area for your Webflow site",
+          "description": null,
+          "bullets": [
+            "Hover on your site thumbnail",
+            "A gear icon will appear in the top right corner, click it",
+            "Then select \"Publishing\" in the left hand menu bar"
+          ],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-subdomain/step-1.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 2",
+          "title": "Click \"add a custom domain\" then \"quick connect subdomain\"",
+          "description": null,
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-subdomain/step-2.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 3",
+          "title": "The \"Entri\" modal will pop up. Click \"Continue\"",
+          "description": null,
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-subdomain/step-3.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 4",
+          "title": "Enter your subdomain and domain",
+          "description": "Enter the subdomain we agreed on (e.g. \"try\") in the subdomain field, and your domain (e.g. \"yourdomain.com\") in the domain field.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-subdomain/step-4.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 5",
+          "title": "Click \"Authorize with [Your DNS Provider]\"",
+          "description": "This will ask you to log in to your DNS provider (e.g. Cloudflare, GoDaddy). It will then add the required records automatically.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-subdomain/step-5.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 6 (Final Step)",
+          "title": "Let us know once it's done",
+          "description": "We'll verify everything is connected correctly and complete the final checks. You're all set!",
           "bullets": [],
           "records": [],
           "imageUrl": null,
