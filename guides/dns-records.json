@@ -1,0 +1,87 @@
+{
+  "title": "Adding DNS Records",
+  "slug": "dns-records",
+  "intro": {
+    "text": "Follow these steps to add the DNS records needed to create a subdomain for your funnel (e.g. try.yourdomain.com). We host landing pages on a subdomain so we can set up accurate tracking, keep page speeds fast, and avoid any conflicts with your main website.",
+    "bullets": [],
+    "helpText": "If you run into any trouble, reach out and we'll help. You can <a href=\"https://www.landingpagelabs.co/meet-with-tyce\">book a meeting</a> directly."
+  },
+  "prerequisites": [],
+  "estimatedTime": null,
+  "sections": [
+    {
+      "heading": "GoDaddy",
+      "steps": [
+        {
+          "label": "Step 1",
+          "title": "Login to GoDaddy",
+          "description": null,
+          "bullets": [
+            "Go to dcc.godaddy.com/control/portfolio and log in",
+            "Find the domain we're creating the subdomain on",
+            "Select the DNS tab",
+            "Scroll down to the Records section and click Add"
+          ],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 2",
+          "title": "Add Record 1 (TXT Record)",
+          "description": "Click Save after entering the details below.",
+          "bullets": [],
+          "records": [
+            {
+              "Type": "TXT",
+              "Name": "_webflow.try",
+              "Value": "one-time-verification=249aea32-5afa-4ac5-bdc5-979ac23b516f",
+              "TTL": "Leave as default"
+            }
+          ],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 3",
+          "title": "Add Record 2 (CNAME Record)",
+          "description": "Click Save after entering the details below.",
+          "bullets": [],
+          "records": [
+            {
+              "Type": "CNAME",
+              "Name": "try",
+              "Value": "cdn.webflow.com",
+              "TTL": "Leave as default"
+            }
+          ],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 4 (Final Step)",
+          "title": "Let us know the records have been added",
+          "description": "Once both records are added, let us know and we'll verify everything is connected correctly. DNS changes usually take effect within an hour or two, but can sometimes take up to 48 hours.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": true
+        }
+      ]
+    },
+    {
+      "heading": "Other Domain Providers",
+      "steps": [
+        {
+          "label": "Same Process",
+          "title": "For other DNS providers, it's the same process as outlined above",
+          "description": "Find your root domain (e.g. yourbusiness.com), look for a section called DNS Records, then follow the same steps as GoDaddy above. If you run into any trouble, reach out and we'll help.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Google Analytics 4 Admin Access Set Up Guide",
+  "slug": "ga4-admin-access",
+  "intro": {
+    "text": "We need admin access to your Google Analytics 4 property to create a new GA4 property for the new funnel on Webflow. This allows us to set up Google Ads conversion tracking so we can measure landing page performance accurately.",
+    "bullets": [
+      "Track conversions specifically from the LPL funnel landing page",
+      "Report on landing page performance separately from your other website activity"
+    ],
+    "helpText": "If you have any troubles, feel free to email Tyce, or <a href=\"https://www.landingpagelabs.co/meet-with-tyce\">book a meeting</a> directly"
+  },
+  "prerequisites": [],
+  "estimatedTime": null,
+  "sections": [
+    {
+      "heading": null,
+      "steps": [
+        {
+          "label": "Step 1",
+          "title": "Sign in at analytics.google.com",
+          "description": "Ensure the correct property is selected.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/ga4-admin-access/step-1.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 2",
+          "title": "Click the Admin gear icon (bottom-left)",
+          "description": null,
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/ga4-admin-access/step-2.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 3",
+          "title": "Under Account column, click \"Account Access Management\"",
+          "description": null,
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/ga4-admin-access/step-3.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 4",
+          "title": "Click the blue + button, then select \"Add users\"",
+          "description": null,
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/ga4-admin-access/step-4.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 5 (Final Step)",
+          "title": "Enter \"dev@landingpagelabs.co\", select the Administrator role, click \"Add\"",
+          "description": null,
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/ga4-admin-access/step-5.png",
+          "isFinal": true
+        }
+      ]
+    }
+  ]
+}

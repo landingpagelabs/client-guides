@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Guide — Landing Page Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Custom Fonts from Bunny CDN -->
+  <style>
+    @font-face {
+      font-family: 'F37 Sonic';
+      src: url('https://landing-page-labs.b-cdn.net/F37%20Sonic/subset-F37SonicTrial-ExtraBoldItalic.woff2') format('woff2');
+      font-weight: 800;
+      font-style: italic;
+      font-display: swap;
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading state -->
+  <div id="loading" class="loading">
+    <div class="loading__spinner"></div>
+  </div>
+
+  <!-- Error state -->
+  <div id="error" class="error" style="display:none;">
+    <h1 class="error__title">Guide Not Found</h1>
+    <p class="error__text">The guide you're looking for doesn't exist or may have been moved.</p>
+    <a href="https://www.landingpagelabs.co" class="error__link">Go to Landing Page Labs</a>
+  </div>
+
+  <!-- Main guide content (hidden until rendered) -->
+  <div id="guideContent" style="display:none;">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__inner">
+        <a href="https://www.landingpagelabs.co" class="header__logo">
+          <img src="https://landing-page-labs.b-cdn.net/Proposal-LPLabsLogo.png" alt="Landing Page Labs" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero / Title -->
+    <section class="hero">
+      <h1 class="hero__title" id="guideTitle"></h1>
+    </section>
+
+    <!-- Intro Box -->
+    <section class="intro" id="introSection">
+      <div class="intro__inner">
+        <div class="intro__box">
+          <p class="intro__text" id="introText"></p>
+          <ul class="intro__bullets" id="introBullets"></ul>
+          <div class="intro__prerequisites" id="introPrereqs" style="display:none;">
+            <p class="intro__prereq-label">Before you start, confirm the following:</p>
+            <ul class="intro__prereq-list" id="prereqList"></ul>
+          </div>
+          <p class="intro__time" id="introTime" style="display:none;"></p>
+          <p class="intro__help" id="introHelp"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps / Sections -->
+    <main class="steps" id="stepsContainer"></main>
+
+    <!-- Thank You Footer -->
+    <section class="thankyou">
+      <h2 class="thankyou__title">Thank You!</h2>
+      <div class="thankyou__footer">
+        <img src="https://landing-page-labs.b-cdn.net/Proposal-LPLabsLogo.png" alt="Landing Page Labs" class="thankyou__logo" />
+      </div>
+    </section>
+
+  </div>
+
+  <script src="render.js"></script>
+</body>
+</html>
