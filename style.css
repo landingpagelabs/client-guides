@@ -91,11 +91,13 @@ a:hover { opacity: 0.8; }
   max-width: 800px;
   margin: 0 auto;
   padding: 16px 24px;
+  text-align: center;
 }
 
 .header__logo img {
   height: 28px;
   width: auto;
+  display: inline-block;
 }
 
 /* ---------- Hero ---------- */
