@@ -1,0 +1,58 @@
+{
+  "title": "Setting Up a Free Webflow Account",
+  "slug": "webflow-account",
+  "intro": {
+    "text": "We build your landing page in Webflow, a professional website builder. You'll need a free Webflow account so we can share the project with you and publish it to your subdomain. No credit card required.",
+    "bullets": [
+      "We build your landing page inside your Webflow account so you own it",
+      "The free Starter plan is all you need to get started",
+      "We handle the setup and build once you have the account created"
+    ],
+    "helpText": "If you have any troubles, feel free to email Tyce, or <a href=\"https://www.landingpagelabs.co/meet-with-tyce\">book a meeting</a> directly"
+  },
+  "prerequisites": [],
+  "estimatedTime": "~2 minutes",
+  "sections": [
+    {
+      "heading": null,
+      "steps": [
+        {
+          "label": "Step 1",
+          "title": "Go to webflow.com/signup",
+          "description": "You can sign up with Google (fastest) or enter your work email address and click Continue.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-account/step-1.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 2",
+          "title": "Complete the signup form",
+          "description": "Fill in your name and create a password. Then verify your email address by clicking the link Webflow sends you.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": false
+        },
+        {
+          "label": "Step 3",
+          "title": "Stay on the free Starter plan",
+          "description": "You do not need to upgrade or enter any payment details. The free Starter plan is all we need. If prompted to choose a plan, select \"Starter\" (Free).",
+          "bullets": [],
+          "records": [],
+          "imageUrl": "https://landing-page-labs.b-cdn.net/client-guides/webflow-account/step-3.png",
+          "isFinal": false
+        },
+        {
+          "label": "Step 4 (Final Step)",
+          "title": "Let us know your account is ready",
+          "description": "Once your account is created, let us know and we'll invite you to the project workspace. We'll handle everything from there.",
+          "bullets": [],
+          "records": [],
+          "imageUrl": null,
+          "isFinal": true
+        }
+      ]
+    }
+  ]
+}
