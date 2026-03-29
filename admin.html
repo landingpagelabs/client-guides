@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Client Guides — Landing Page Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="https://landing-page-labs.b-cdn.net/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'F37 Sonic';
+      src: url('https://landing-page-labs.b-cdn.net/F37%20Sonic/subset-F37SonicTrial-ExtraBoldItalic.woff2') format('woff2');
+      font-weight: 800; font-style: italic; font-display: swap;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f5f5f5; color: #222; }
+    a { color: #0000FF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .admin { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+    .admin__logo { text-align: center; margin-bottom: 40px; }
+    .admin__logo img { height: 28px; display: inline-block; }
+    .admin__title {
+      font-family: 'F37 Sonic', sans-serif; font-weight: 800; font-style: italic;
+      text-transform: uppercase; font-size: 28px; text-align: center; margin-bottom: 32px;
+    }
+    .admin-pin { text-align: center; margin-bottom: 32px; }
+    .admin-pin__wrap { display: flex; gap: 8px; max-width: 300px; margin: 0 auto; }
+    .admin-pin__input {
+      flex: 1; padding: 12px 16px; font-size: 16px; font-family: inherit;
+      border: 1px solid #ddd; border-radius: 8px; outline: none; text-align: center; letter-spacing: 0.15em;
+    }
+    .admin-pin__input:focus { border-color: #0000FF; }
+    .admin-pin__btn {
+      padding: 12px 20px; font-size: 14px; font-weight: 600; font-family: inherit;
+      background: #222; color: #fff; border: none; border-radius: 8px; cursor: pointer;
+    }
+    .admin-pin__btn:hover { background: #000; }
+    .admin-pin__error { color: #D32F2F; font-size: 13px; margin-top: 12px; display: none; }
+    .item-list { display: none; }
+    .item-card {
+      background: #fff; border-radius: 12px; padding: 20px 24px; margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .item-card__name { font-size: 15px; font-weight: 600; }
+    .item-card__slug { font-size: 12px; color: #888; font-family: monospace; margin-top: 4px; }
+    .item-card__link {
+      font-size: 13px; font-weight: 600; color: #0000FF; flex-shrink: 0;
+      padding: 8px 16px; border: 1px solid #ddd; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .item-card__link:hover { background: #EEF0FF; border-color: #C8CCFF; text-decoration: none; }
+    .item-card__link svg { flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <div class="admin">
+    <div class="admin__logo">
+      <img src="https://landing-page-labs.b-cdn.net/Proposal-LPLabsLogo.png" alt="Landing Page Labs" />
+    </div>
+    <h1 class="admin__title">Client Guides Admin</h1>
+
+    <div class="admin-pin" id="adminPin">
+      <div class="admin-pin__wrap">
+        <input type="password" id="adminPinInput" class="admin-pin__input" placeholder="Admin PIN" autocomplete="off" />
+        <button id="adminPinBtn" class="admin-pin__btn">Access</button>
+      </div>
+      <p id="adminPinError" class="admin-pin__error">Incorrect PIN.</p>
+    </div>
+
+    <div class="item-list" id="itemList"></div>
+  </div>
+
+  <script>
+    (async function () {
+      var ADMIN_PIN_HASH = 'bca8b0f0ec5505353fd6852d9d89694aa0203680be549e178ea5802277c188f8';
+      var STORAGE_KEY = 'lpl_guides_admin_pin';
+      var ARROW_SVG = '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 7.66667V11.6667C11 12.0203 10.8595 12.3594 10.6095 12.6095C10.3594 12.8595 10.0203 13 9.66667 13H2.33333C1.97971 13 1.64057 12.8595 1.39052 12.6095C1.14048 12.3594 1 12.0203 1 11.6667V4.33333C1 3.97971 1.14048 3.64057 1.39052 3.39052C1.64057 3.14048 1.97971 3 2.33333 3H6.33333M9 1H13M13 1V5M13 1L5.66667 8.33333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      var items = [
+        { name: 'GTM Admin Access', slug: 'gtm-admin-access' },
+        { name: 'GA4 Admin Access', slug: 'ga4-admin-access' },
+        { name: 'Webflow Subdomain', slug: 'webflow-subdomain' },
+        { name: 'Adding DNS Records', slug: 'dns-records' },
+        { name: 'Setting Up Webflow', slug: 'setting-up-webflow' },
+        { name: 'Webflow Account', slug: 'webflow-account' }
+      ];
+
+      async function sha256(text) {
+        var encoder = new TextEncoder();
+        var data = encoder.encode(text);
+        var buf = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+      }
+
+      var savedHash = localStorage.getItem(STORAGE_KEY);
+      if (savedHash === ADMIN_PIN_HASH) showItems();
+
+      document.getElementById('adminPinBtn').addEventListener('click', attemptPin);
+      document.getElementById('adminPinInput').addEventListener('keydown', function (e) { if (e.key === 'Enter') attemptPin(); });
+      document.getElementById('adminPinInput').focus();
+
+      async function attemptPin() {
+        var val = document.getElementById('adminPinInput').value.trim();
+        if (!val) return;
+        var hash = await sha256(val);
+        if (hash === ADMIN_PIN_HASH) {
+          localStorage.setItem(STORAGE_KEY, hash);
+          showItems();
+        } else {
+          document.getElementById('adminPinError').style.display = 'block';
+          document.getElementById('adminPinInput').value = '';
+          document.getElementById('adminPinInput').focus();
+        }
+      }
+
+      function showItems() {
+        document.getElementById('adminPin').style.display = 'none';
+        var list = document.getElementById('itemList');
+        list.style.display = 'block';
+        items.forEach(function (item) {
+          var card = document.createElement('div');
+          card.className = 'item-card';
+          var info = document.createElement('div');
+          var name = document.createElement('div');
+          name.className = 'item-card__name';
+          name.textContent = item.name;
+          info.appendChild(name);
+          var slug = document.createElement('div');
+          slug.className = 'item-card__slug';
+          slug.textContent = '/' + item.slug;
+          info.appendChild(slug);
+          card.appendChild(info);
+          var link = document.createElement('a');
+          link.className = 'item-card__link';
+          link.href = '/' + item.slug;
+          link.target = '_blank';
+          link.innerHTML = 'Open' + ARROW_SVG;
+          card.appendChild(link);
+          list.appendChild(card);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
